@@ -10,7 +10,18 @@ D'un point de vue technique, le pipeline de traitement est le suivant:
 
 Par ailleurs, il convient de noter les données fournies ne sont pas suffisamment nombreuses pour pouvoir élaborer des dashboards avancés. L'objet de ce PoC se limite donc à l'affichage de quelques valeurs et à suivre leur évolution dans le temps.
 
-## Prérequis Techniques
+## Environnement technique
 
+Ce PoC a été réalisé sur un environnement Windows 7 en mode "one shot", avec les produits suivants.
 
+| Produit | Version | Lien de Download |
+| --- | --- | --- |
+| Apache Kafka | 2.3.0 | https://kafka.apache.org/downloads |
+| Apache Nifi | 1.9.2 | https://nifi.apache.org/download.html |
+| filebeat | 7.2.0 | https://www.elastic.co/fr/downloads/beats/filebeat |
+| logstash | 7.2.0 | https://www.elastic.co/fr/downloads/logstash |
+| elasticsearch | 7.2.0 | https://www.elastic.co/fr/downloads/elasticsearch |
+| kibana | 7.2.0 | https://www.elastic.co/fr/downloads/kibana |
+
+Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Tools](http://www.kafkatool.com/).
 
