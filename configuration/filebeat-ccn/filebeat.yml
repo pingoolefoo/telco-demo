@@ -25,7 +25,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /home/ccasadei/Work/africa/01_data/CCN/*.dat
+    - /<TODO>/telco-demo/samples/CCN/*.dat
 
 #============================= Filebeat modules ===============================
 
@@ -50,7 +50,7 @@ setup.template.settings:
 
 # The name of the shipper that publishes the network data. It can be used to group
 # all the transactions sent by a single shipper in the web interface.
-name: "telco-data-collector"
+name: "telco-demo-ccn-collector"
 
 # Optional fields that you can specify to add additional information to the
 # output.
@@ -157,4 +157,4 @@ output.kafka:
 
   # The configurable ClientID used for logging, debugging, and auditing
   # purposes.  The default is "beats".
-  client_id: filebeat-telco-data-collector
+  client_id: filebeat-telco-demo-ccn
