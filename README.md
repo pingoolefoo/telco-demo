@@ -299,11 +299,31 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 
 ### Configuration du pattern d'index telco-air
 
-TODO
+Création du pattern d'index:
+* Ouvrir un navigateur web et se rendre à l'adresse http://localhost:5601
+* Dans la barre de gauche, cliquer sur management
+* Dans la rubrique Kibana, cliquer sur `Index Patterns`
+* Cliquer sur le bouton `Create index pattern`
+* Saisir `telco-air-data*` puis cliquer  sur `> Next step`
+* Sélectionner le champ `@timestamp` comme indicateur temporel
+* Cliquer sur `Create index pattern`
+
+Configuration de champs scriptés:
+* TODO
 
 ### Configuration du pattern d'index telco-ccn
 
-TODO
+Création du pattern d'index:
+* Ouvrir un navigateur web et se rendre à l'adresse http://localhost:5601
+* Dans la barre de gauche, cliquer sur management
+* Dans la rubrique Kibana, cliquer sur `Index Patterns`
+* Cliquer sur le bouton `Create index pattern`
+* Saisir `telco-ccn-data*` puis cliquer  sur `> Next step`
+* Sélectionner le champ `@timestamp` comme indicateur temporel
+* Cliquer sur `Create index pattern`
+
+Configuration de champs scriptés:
+* TODO
 
 ### Import des dashboards
 
