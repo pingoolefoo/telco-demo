@@ -30,6 +30,10 @@
     - [Configuration du template d'index](#configuration-du-template-dindex)
   - [Configuration & lancement de filebeat](#configuration--lancement-de-filebeat)
   - [Configuration & lancement de logstash](#configuration--lancement-de-logstash)
+    - [Remarques](#remarques)
+    - [Configuration](#configuration-1)
+    - [Lancement du pipeline AIR](#lancement-du-pipeline-air)
+    - [Lancement du pipeline CCN](#lancement-du-pipeline-ccn)
   - [Lancement de NiFi](#lancement-de-nifi)
 
 
@@ -240,7 +244,7 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Ouvrir la console de développement de kibana disponible à l'adresse http://localhost:5601/app/kibana#/dev_tools/console?_g=()
 * Copier/Coller puis exécuter la commande suivante 
   ```
-  TODO
+  pas utilisé pour le moment, mais constitue une bonne pratique dans l'absolu
   ```
 
 
@@ -262,7 +266,36 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 
 ## Configuration & lancement de logstash
 
-TODO
+### Remarques
+
+* Il est possible de centraliser la configuration des pipelines logstash dans elastic à condition d'avoir une licence
+* Sur ce PoC, nous avons choisi de nous limiter à des fonctionnalités ne nécessitant pas de licence
+* Par ailleurs, dans le cadre de ce PoC 
+  * les pipelines logstash sont stockés dans `C:\PoC-telco\logstash\config\pipelines` 
+  * les pipelines air & ccn seront lancés séparéments
+  * les capacités de lancement simultané de plusieurs pipelines par logstash ne seront pas exploitées
+
+### Configuration
+
+* Dans le répertoire `C:\PoC-telco\logstash\config` créer un nouveau répertoire `pipelines`
+* Dans le répertoire `C:\PoC-telco\logstash\config\pipelines`  créer un nouveau répertoire `pipeline-air`
+* Dans le répertoire `C:\PoC-telco\logstash\config\pipelines`  créer un nouveau répertoire `pipeline-ccn`
+* Copier les fichier se trouvant [ici] (https://github.com/pingoolefoo/telco-demo/tree/master/configuration/logstash/pipeline-air) dans `C:\PoC-telco\logstash\config\pipelines\pipeline-air`
+* Copier les fichier se trouvant [ici] (https://github.com/pingoolefoo/telco-demo/tree/master/configuration/logstash/pipeline-ccn) dans `C:\PoC-telco\logstash\config\pipelines\pipeline-ccn`
+
+### Lancement du pipeline AIR
+
+* Ouvrir une fenêtre "Invite de commandes"
+* Se placer dans le répertoire `C:\PoC-telco\logstash`
+* Lancer la commande `bin\logstash -f config\pipelines\pipeline-air`
+* Attendre quelques minutes que logstash se lance et traite l'ensemble des données puis arrêter logstash à l'aide des touches `Ctrl + C`
+
+### Lancement du pipeline CCN
+
+* Ouvrir une fenêtre "Invite de commandes"
+* Se placer dans le répertoire `C:\PoC-telco\logstash`
+* Lancer la commande `bin\logstash -f config\pipelines\pipeline-ccn`
+* Attendre quelques minutes que logstash se lance et traite l'ensemble des données puis arrêter logstash à l'aide des touches `Ctrl + C`
 
 ## Lancement de NiFi
 
