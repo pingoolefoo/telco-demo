@@ -11,7 +11,6 @@
     - [Installation de logstash](#installation-de-logstash)
     - [Installation de filebeat](#installation-de-filebeat)
     - [Installation de Kafka](#installation-de-kafka)
-    - [Installation de NiFi](#installation-de-nifi)
     - [Fichiers d'exemple](#fichiers-dexemple)
   - [Configuration & lancement de Kafka](#configuration--lancement-de-kafka)
     - [Configuration](#configuration)
