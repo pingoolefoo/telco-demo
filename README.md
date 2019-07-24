@@ -33,6 +33,9 @@
     - [Configuration](#configuration-1)
     - [Lancement du pipeline AIR](#lancement-du-pipeline-air)
     - [Lancement du pipeline CCN](#lancement-du-pipeline-ccn)
+  - [Dashboards Kibana](#dashboards-kibana)
+    - [Configuration des patterns d'index](#configuration-des-patterns-dindex)
+    - [Import des dashboards](#import-des-dashboards)
 
 
 
@@ -286,3 +289,17 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Se placer dans le répertoire `C:\PoC-telco\logstash`
 * Lancer la commande `bin\logstash -f config\pipelines\pipeline-ccn`
 * Attendre quelques minutes que logstash se lance et traite l'ensemble des données puis arrêter logstash à l'aide des touches `Ctrl + C`
+
+
+
+
+
+## Dashboards Kibana
+
+### Configuration des patterns d'index
+
+TODO
+
+### Import des dashboards
+
+TODO
