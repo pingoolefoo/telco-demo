@@ -299,7 +299,8 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 
 ### Configuration du pattern d'index telco-air
 
-Création du pattern d'index:
+#### Création du pattern d'index
+
 * Ouvrir un navigateur web et se rendre à l'adresse http://localhost:5601
 * Dans la barre de gauche, cliquer sur management
 * Dans la rubrique Kibana, cliquer sur `Index Patterns`
@@ -308,7 +309,8 @@ Création du pattern d'index:
 * Sélectionner le champ `@timestamp` comme indicateur temporel
 * Cliquer sur `Create index pattern`
 
-Configuration de champs scriptés:
+#### Configuration de champs scriptés
+
 * Toujours dans `Management>Kibana>Index Patterns`, cliquer sur le pattern `telco-air-data`
 * Cliquer sur l'onglet `Scripted fields`
 * Cliquer sur le bouton `Add scripted field`
@@ -337,7 +339,8 @@ Configuration de champs scriptés:
   ```
 * Une fois le formulaire complété, cliquer sur `Save field`
 
-Vérification:
+#### Vérification
+
 * Cliquer sur `Discover` dans la barre de gauche
 * Sélectionner le pattern `telco-air-data*`
 * Sélectionner la période de temps `Last 1 year` puis zoomer sur les données
@@ -345,7 +348,8 @@ Vérification:
 
 ### Configuration du pattern d'index telco-ccn
 
-Création du pattern d'index:
+#### Création du pattern d'index
+
 * Ouvrir un navigateur web et se rendre à l'adresse http://localhost:5601
 * Dans la barre de gauche, cliquer sur management
 * Dans la rubrique Kibana, cliquer sur `Index Patterns`
