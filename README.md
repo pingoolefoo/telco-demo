@@ -309,7 +309,39 @@ Création du pattern d'index:
 * Cliquer sur `Create index pattern`
 
 Configuration de champs scriptés:
-* TODO
+* Toujours dans `Management>Kibana>Index Patterns`, cliquer sur le pattern `telco-air-data`
+* Cliquer sur l'onglet `Scripted fields`
+* Cliquer sur le bouton `Add scripted field`
+* Renseigner le formulaire comme il suit:
+  * Name: `OPERATEUR_TELECOM`
+  * Language: `painless`
+  * Type: `string`
+  * Format: `String`
+  * Transform: `Upper Case`
+  * Popularity: `0`
+  * Script:
+  ```
+  boolean isAlpha = doc.aCCOUNT_NR.value >= 10000000 && doc.aCCOUNT_NR.value <= 59999999;
+  boolean isBravo = doc.aCCOUNT_NR.value >= 60000000 && doc.aCCOUNT_NR.value <= 68999999;
+  boolean isCharlie = doc.aCCOUNT_NR.value >= 69000000 && doc.aCCOUNT_NR.value <= 99999999;
+
+  if (isAlpha) {
+    return "alpha";
+  } else if (isBravo) {
+    return "bravo";
+  } else if (isCharlie) {
+    return "charlie";
+  } else {
+    return "inconnu";
+  }
+  ```
+* Une fois le formulaire complété, cliquer sur `Save field`
+
+Vérification:
+* Cliquer sur `Discover` dans la barre de gauche
+* Sélectionner le pattern `telco-air-data*`
+* Sélectionner la période de temps `Last 1 year` puis zoomer sur les données
+* Déplier l'un des documents et vérifier que le champ `OPERATEUR_TELECOM` apparait bien
 
 ### Configuration du pattern d'index telco-ccn
 
@@ -322,8 +354,7 @@ Création du pattern d'index:
 * Sélectionner le champ `@timestamp` comme indicateur temporel
 * Cliquer sur `Create index pattern`
 
-Configuration de champs scriptés:
-* TODO
+
 
 ### Import des dashboards
 
