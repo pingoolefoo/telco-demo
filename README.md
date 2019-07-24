@@ -137,12 +137,6 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Renommer le répertoire de kafka en `kafka`, de sorte à avoir un répertoire `C:\PoC-telco\kafka`
 * Télécharger & installer kafka-tools à l'aide de l'installateur fourni
 
-### Installation de NiFi
-
-* Télécharger NiFi et déplacer l'archive dans `C:\PoC-telco\repository`
-* Décompresser NiFi et déplacer le répertoire vers `C:\PoC-telco`
-* Renommer le répertoire de NiFi en `nifi`, de sorte à avoir un répertoire `C:\PoC-telco\nifi`
-
 ### Fichiers d'exemple
 
 * Télécharger le fichier `AIR_POC_random_31052019.txt` ([ici](https://github.com/pingoolefoo/telco-demo/blob/master/samples/AIR/AIR_POC_random_31052019.txt)) et le copier dans le répertoire `C:\PoC-telco\samples\AIR`
