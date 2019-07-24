@@ -34,7 +34,8 @@
     - [Lancement du pipeline AIR](#lancement-du-pipeline-air)
     - [Lancement du pipeline CCN](#lancement-du-pipeline-ccn)
   - [Dashboards Kibana](#dashboards-kibana)
-    - [Configuration des patterns d'index](#configuration-des-patterns-dindex)
+    - [Configuration du pattern d'index telco-air](#configuration-du-pattern-dindex-telco-air)
+    - [Configuration du pattern d'index telco-ccn](#configuration-du-pattern-dindex-telco-ccn)
     - [Import des dashboards](#import-des-dashboards)
 
 
@@ -296,7 +297,11 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 
 ## Dashboards Kibana
 
-### Configuration des patterns d'index
+### Configuration du pattern d'index telco-air
+
+TODO
+
+### Configuration du pattern d'index telco-ccn
 
 TODO
 
