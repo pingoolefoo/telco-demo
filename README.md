@@ -12,6 +12,7 @@
     - [Installation de filebeat](#installation-de-filebeat)
     - [Installation de Kafka](#installation-de-kafka)
     - [Installation de NiFi](#installation-de-nifi)
+    - [Fichiers d'exemple](#fichiers-dexemple)
   - [Configuration & lancement de Kafka](#configuration--lancement-de-kafka)
     - [Configuration](#configuration)
       - [ZooKeeper](#zookeeper)
@@ -26,6 +27,7 @@
     - [Configuration de kibana](#configuration-de-kibana)
     - [Lancement de kibana](#lancement-de-kibana)
     - [Configuration du sharding](#configuration-du-sharding)
+    - [Configuration du template d'index](#configuration-du-template-dindex)
   - [Configuration & lancement de filebeat](#configuration--lancement-de-filebeat)
   - [Configuration & lancement de logstash](#configuration--lancement-de-logstash)
   - [Lancement de NiFi](#lancement-de-nifi)
@@ -140,6 +142,11 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Décompresser NiFi et déplacer le répertoire vers `C:\PoC-telco`
 * Renommer le répertoire de NiFi en `nifi`, de sorte à avoir un répertoire `C:\PoC-telco\nifi`
 
+### Fichiers d'exemple
+
+* Télécharger le fichier `AIR_POC_random_31052019.txt` ([ici](https://github.com/pingoolefoo/telco-demo/blob/master/samples/AIR/AIR_POC_random_31052019.txt)) et le copier dans le répertoire `C:\PoC-telco\samples\AIR`
+* Télécharger le fichier `VOICE_MA_CCN_M_98.dat` ([ici](https://github.com/pingoolefoo/telco-demo/blob/master/samples/CCN/VOICE_MA_CCN_M_98.dat)) et le copier dans le répertoire `C:\PoC-telco\samples\CCN`
+
 
 
 
@@ -197,7 +204,7 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 ### Lancement d'elasticsearch
 
 * Ouvrir une fenêtre "Invite de commandes"
-* Se placer dans le répertoire `C:\PoC-telco\elasticsearch `
+* Se placer dans le répertoire `C:\PoC-telco\elasticsearch`
 * Lancer la commande `bin\elasticsearch`
 * Ouvrir un navigateur web et se rendre à l'adresse http://localhost:9200 et vérifier qu'un document json indiquant le nom du cluster, sa version et quelques autres informations est bien affiché
 
@@ -208,7 +215,7 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 ### Lancement de kibana
 
 * Ouvrir une fenêtre "Invite de commandes"
-* Se placer dans le répertoire `C:\PoC-telco\kibana `
+* Se placer dans le répertoire `C:\PoC-telco\kibana`
 * Lancer la commande `bin\kibana.bat` (attendre que le lancement de kibana se termine)
 * Ouvrir un navigateur web et se rendre à l'adresse http://localhost:5601
 
@@ -228,13 +235,30 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
   }
   ```
 
+### Configuration du template d'index
+
+* Ouvrir la console de développement de kibana disponible à l'adresse http://localhost:5601/app/kibana#/dev_tools/console?_g=()
+* Copier/Coller puis exécuter la commande suivante 
+  ```
+  TODO
+  ```
+
 
 
 
 
 ## Configuration & lancement de filebeat
 
-TODO
+* Télécharger le fichier `filebeat.yml` ([ici](https://github.com/pingoolefoo/telco-demo/blob/master/configuration/filebeat/filebeat.yml))
+* Ecraser le fichier `C:\PoC-telco\filebeat\filebeat.yml` par celui qui vient d'être téléchargé
+* Ouvrir une fenêtre "Invite de commandes"
+* Se placer dans le répertoire `C:\PoC-telco\filebeat`
+* Lancer la commande `filebeat.exe`
+* Vérifier à l'aide de Kafka-Tools que les topics `air-data` et `ccn-data` ont bien été crées
+
+
+
+
 
 ## Configuration & lancement de logstash
 
