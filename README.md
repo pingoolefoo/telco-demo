@@ -34,7 +34,6 @@
     - [Configuration](#configuration-1)
     - [Lancement du pipeline AIR](#lancement-du-pipeline-air)
     - [Lancement du pipeline CCN](#lancement-du-pipeline-ccn)
-  - [Lancement de NiFi](#lancement-de-nifi)
 
 
 
@@ -47,7 +46,7 @@ Ce repository contient divers éléments utilisés dans le cadre d'un PoC. Les j
 D'un point de vue technique, le pipeline de traitement est le suivant:
 * Dépose des fichiers dans un répertoire
 * Lecture & forward dans kafka du contenu de ces fichiers avec filebeat
-* Parsing & forward des données dans elasticsearch avec logstash et/ou NiFi
+* Parsing & forward des données dans elasticsearch avec logstash
 * Stockage des données dans un cluster elasticsearch
 * Affichage de divers indicateurs & dashboards dans kibana
 
@@ -64,7 +63,6 @@ Par ailleurs, les données générées ne sont pas suffisament nombreuses et ne 
 | Windows       | 7/8/10  | N/A                                                |
 | Java          | 12.0.2  | https://www.oracle.com/technetwork/java/index.html |
 | Apache Kafka  |  2.3.0  | https://kafka.apache.org/downloads                 |
-| Apache Nifi   |  1.9.2  | https://nifi.apache.org/download.html              |
 | filebeat      |  7.2.0  | https://www.elastic.co/fr/downloads/beats/filebeat |
 | logstash      |  7.2.0  | https://www.elastic.co/fr/downloads/logstash       |
 | elasticsearch |  7.2.0  | https://www.elastic.co/fr/downloads/elasticsearch  |
@@ -90,7 +88,6 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 | C:\PoC-telco\logstash      | Répertoire d'installation de logstash                             |
 | C:\PoC-telco\filebeat      | Répertoire d'installation de filebeat                             |
 | C:\PoC-telco\kafka         | Répertoire d'installation de kafka                                |
-| C:\PoC-telco\nifi          | Répertoire d'installation de NiFi                                 |
 
 
 
@@ -296,8 +293,3 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Se placer dans le répertoire `C:\PoC-telco\logstash`
 * Lancer la commande `bin\logstash -f config\pipelines\pipeline-ccn`
 * Attendre quelques minutes que logstash se lance et traite l'ensemble des données puis arrêter logstash à l'aide des touches `Ctrl + C`
-
-## Lancement de NiFi
-
-TODO
-
