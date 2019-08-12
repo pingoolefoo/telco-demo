@@ -309,7 +309,7 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Sélectionner le champ `@timestamp` comme indicateur temporel
 * Cliquer sur `Create index pattern`
 
-#### Configuration de champs scriptés
+#### Configuration des champs scriptés
 
 * Toujours dans `Management>Kibana>Index Patterns`, cliquer sur le pattern `telco-air-data`
 * Cliquer sur l'onglet `Scripted fields`
@@ -357,6 +357,75 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
 * Saisir `telco-ccn-data*` puis cliquer  sur `> Next step`
 * Sélectionner le champ `@timestamp` comme indicateur temporel
 * Cliquer sur `Create index pattern`
+
+#### Configuration des champs scriptés
+
+##### DIALED_DIGIT_OPERATOR
+
+* Toujours dans `Management>Kibana>Index Patterns`, cliquer sur le pattern `telco-ccn-data`
+* Cliquer sur l'onglet `Scripted fields`
+* Cliquer sur le bouton `Add scripted field`
+* Renseigner le formulaire comme il suit:
+  * Name: `DIALED_DIGIT_OPERATOR`
+  * Language: `painless`
+  * Type: `string`
+  * Format: `String`
+  * Transform: `Upper Case`
+  * Popularity: `0`
+  * Script:
+  ```
+boolean isAlpha = doc.dIALED_DIGIT.value >= 10000000 && doc.dIALED_DIGIT.value <= 59999999;
+boolean isBravo = doc.dIALED_DIGIT.value >= 60000000 && doc.dIALED_DIGIT.value <= 68999999;
+boolean isCharlie = doc.dIALED_DIGIT.value >= 69000000 && doc.dIALED_DIGIT.value <= 99999999;
+
+if (isAlpha) {
+  return "alpha";
+} else if (isBravo) {
+  return "bravo";
+} else if (isCharlie) {
+  return "charlie";
+} else {
+  return "inconnu";
+}
+  ```
+* Une fois le formulaire complété, cliquer sur `Save field`
+
+##### CHARGE_PARTY_NUMBER_OPERATOR
+
+* Toujours dans `Management>Kibana>Index Patterns`, cliquer sur le pattern `telco-ccn-data`
+* Cliquer sur l'onglet `Scripted fields`
+* Cliquer sur le bouton `Add scripted field`
+* Renseigner le formulaire comme il suit:
+  * Name: `CHARGE_PARTY_NUMBER_OPERATOR`
+  * Language: `painless`
+  * Type: `string`
+  * Format: `String`
+  * Transform: `Upper Case`
+  * Popularity: `0`
+  * Script:
+  ```
+boolean isAlpha = doc.cHARGE_PARTY_NUMBER.value >= 10000000 && doc.cHARGE_PARTY_NUMBER.value <= 59999999;
+boolean isBravo = doc.cHARGE_PARTY_NUMBER.value >= 60000000 && doc.cHARGE_PARTY_NUMBER.value <= 68999999;
+boolean isCharlie = doc.cHARGE_PARTY_NUMBER.value >= 69000000 && doc.cHARGE_PARTY_NUMBER.value <= 99999999;
+
+if (isAlpha) {
+  return "alpha";
+} else if (isBravo) {
+  return "bravo";
+} else if (isCharlie) {
+  return "charlie";
+} else {
+  return "inconnu";
+}
+  ```
+* Une fois le formulaire complété, cliquer sur `Save field`
+
+#### Vérification
+
+* Cliquer sur `Discover` dans la barre de gauche
+* Sélectionner le pattern `telco-ccn-data*`
+* Sélectionner la période de temps `Last 1 year` puis zoomer sur les données
+* Déplier l'un des documents et vérifier que les champs `CHARGE_PARTY_NUMBER_OPERATOR` et `DIALED_DIGIT_OPERATOR` apparaissent bien
 
 
 
