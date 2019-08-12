@@ -374,19 +374,19 @@ Pour faciliter l'utilisation de Kafka, il est possible de recourir à [Kafka Too
   * Popularity: `0`
   * Script:
   ```
-boolean isAlpha = doc.dIALED_DIGIT.value >= 10000000 && doc.dIALED_DIGIT.value <= 59999999;
-boolean isBravo = doc.dIALED_DIGIT.value >= 60000000 && doc.dIALED_DIGIT.value <= 68999999;
-boolean isCharlie = doc.dIALED_DIGIT.value >= 69000000 && doc.dIALED_DIGIT.value <= 99999999;
+  boolean isAlpha = doc.dIALED_DIGIT.value >= 10000000 && doc.dIALED_DIGIT.value <= 59999999;
+  boolean isBravo = doc.dIALED_DIGIT.value >= 60000000 && doc.dIALED_DIGIT.value <= 68999999;
+  boolean isCharlie = doc.dIALED_DIGIT.value >= 69000000 && doc.dIALED_DIGIT.value <= 99999999;
 
-if (isAlpha) {
-  return "alpha";
-} else if (isBravo) {
-  return "bravo";
-} else if (isCharlie) {
-  return "charlie";
-} else {
-  return "inconnu";
-}
+  if (isAlpha) {
+    return "alpha";
+  } else if (isBravo) {
+    return "bravo";
+  } else if (isCharlie) {
+    return "charlie";
+  } else {
+    return "inconnu";
+  }
   ```
 * Une fois le formulaire complété, cliquer sur `Save field`
 
@@ -404,19 +404,19 @@ if (isAlpha) {
   * Popularity: `0`
   * Script:
   ```
-boolean isAlpha = doc.cHARGE_PARTY_NUMBER.value >= 10000000 && doc.cHARGE_PARTY_NUMBER.value <= 59999999;
-boolean isBravo = doc.cHARGE_PARTY_NUMBER.value >= 60000000 && doc.cHARGE_PARTY_NUMBER.value <= 68999999;
-boolean isCharlie = doc.cHARGE_PARTY_NUMBER.value >= 69000000 && doc.cHARGE_PARTY_NUMBER.value <= 99999999;
+  boolean isAlpha = doc.cHARGE_PARTY_NUMBER.value >= 10000000 && doc.cHARGE_PARTY_NUMBER.value <= 59999999;
+  boolean isBravo = doc.cHARGE_PARTY_NUMBER.value >= 60000000 && doc.cHARGE_PARTY_NUMBER.value <= 68999999;
+  boolean isCharlie = doc.cHARGE_PARTY_NUMBER.value >= 69000000 && doc.cHARGE_PARTY_NUMBER.value <= 99999999;
 
-if (isAlpha) {
-  return "alpha";
-} else if (isBravo) {
-  return "bravo";
-} else if (isCharlie) {
-  return "charlie";
-} else {
-  return "inconnu";
-}
+  if (isAlpha) {
+    return "alpha";
+  } else if (isBravo) {
+    return "bravo";
+  } else if (isCharlie) {
+    return "charlie";
+  } else {
+    return "inconnu";
+  }
   ```
 * Une fois le formulaire complété, cliquer sur `Save field`
 
